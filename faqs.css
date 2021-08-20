@@ -1,0 +1,79 @@
+.faq{
+  max-width: 1200px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-left: 70px;
+}
+
+.image, .accordion-menu{
+  width: calc(50% - 20px);
+}
+
+.title{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #e77f67;
+  display: flex;
+  color: #fff;
+  padding: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon{
+  position: relative;
+  width: 14px;
+}
+
+.icon::before, .icon::after{
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 3px;
+  background-color: #fff;
+  top: -1.5px;
+}
+
+.icon::after{
+  transform: rotate(90deg);
+  transition: .5s linear;
+}
+
+.text{
+  background-color: #e77f67;
+  font-weight: 400;
+  color: #fff;
+  line-height: 26px;
+  margin: 6px 0;
+  opacity: 0;
+  height: 0;
+}
+
+.item:target .text{
+  height: auto;
+  opacity: 1;
+  padding: 20px;
+  margin: 12px 0;
+}
+
+.item:target .icon::after{
+  transform: rotate(0);
+}
+
+@media screen and (max-width:960px){
+  .container{
+    max-width: 600px;
+  }
+
+  .image, .accordion-menu{
+    width: 100%;
+    margin: 20px 0;
+  }
+}
